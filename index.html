@@ -15,7 +15,7 @@
     <!-- Path to Framework7 color related styles, Material Theme -->
     <link rel="stylesheet" href="css/framework7.material.colors.min.css">
 
-    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
 
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/aplicacion.css">
@@ -101,7 +101,7 @@
             <div class="page-content">
 
              <div class="content-block">
-               ¡Bienvenido a MathRelation!. Ingrese los detalles para el conjunto A.
+               ¡Bienvenido a MathRelation!. Ingrese los detalles para generar el conjunto A.
               
                <div class="content-block-title">Nro. de Elementos (5 <= n <= 15)</div>
                <div class="list-block">
@@ -110,7 +110,23 @@
                     <div class="item-content">
                       <div class="item-inner"> 
                         <div class="item-input">
-                          <input type="text" placeholder="5" readonly="readonly" id="picker-elementos"/>
+                          <!--<input type="text" placeholder="5" readonly="readonly" id="picker-elementos"/>-->
+                          
+                          <select id="id-elementos">
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                          </select>
+                    
+                    
                         </div>
                       </div>
                     </div>
@@ -125,7 +141,18 @@
                     <div class="item-content">
                       <div class="item-inner"> 
                         <div class="item-input">
-                          <input type="text" placeholder="Seleccione una relación" readonly="readonly" id="picker-relacion"/>
+                          <!--<input type="text" placeholder="Seleccione una relación" readonly="readonly" id="picker-relacion"/>-->
+                          
+                   
+                           
+                    <select id="id-tipo-relacion">
+                      <option value="1">a > b</option>
+                      <option value="2">a < b</option>
+                      <option value="3">a ≥ b</option>
+                      <option value="4">a ≤ b</option>
+                      <option value="5">a | b = 0</option>
+                    </select>
+                           
                         </div>
                       </div>
                     </div>
@@ -141,20 +168,15 @@
               </p>
               
 
-              <ul>
-              <li>Reflexiva: Sí</li>
-              <li>Irreflexiva: No</li>
-              <li>Simétrica: Sí</li>
-              <li>Asimetrica: Sí</li>
-              <li>Antisimetrica: Sí</li>
-              <li>Transitiva: Sí</li>
+              <ul id="bloque_identificadores">
+              
 
               </ul>
               </div> <!-- Fin .content-block-->
 
-              <div class="content-block" id="block_divisores">
-                <p id="text_Random" style="display:none;"></p>
-                <p id="text_Divisores" style="display:none;"></p>
+              <div class="content-block" id="block_conjunto">
+                
+                <p id="text_Elementos" style="display:none;"></p>
               </div> <!-- Fin .content-block-->
             
 
@@ -173,17 +195,7 @@
                       </div>
                     </div>
                   </li>
-                  <li class="accordion-item"><a href="#" class="item-link item-content">
-                    <div class="item-inner"> 
-                      <div class="item-title">Antisimétricas</div>
-                    </div></a>
-                    <div class="accordion-item-content">
-                        <div class="content-block">
-                        <p id="idAntisimetricas"></p>
-                      </div>
-
-                    </div>
-                  </li>
+                 
                   <li class="accordion-item"><a href="#" class="item-link item-content">
                     <div class="item-inner"> 
                       <div class="item-title">Diagrama de Hasse</div>
