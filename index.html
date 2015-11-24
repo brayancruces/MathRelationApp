@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+
+    <title>MathRelationApp v1</title>
+    <!-- Path to Framework7 Library CSS, Material Theme -->
+    <link rel="stylesheet" href="css/framework7.material.min.css">
+    <!-- Path to Framework7 color related styles, Material Theme -->
+    <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
+
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/aplicacion.css">
+
+    <link rel="icon" href="img/icon.png">
+
+  </head>
+
+  <body class="theme-bluegray">
+    
+    <!-- ================ PANELES ================== >
+
+    <!-- Primero, el overlay -->
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    
+    <div class="panel panel-left panel-cover">
+      <div class="view navbar-fixed">
+        <div class="pages">
+          <div data-page="panel-left" class="page">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="center">MathRelation</div>
+              </div>
+            </div>
+            <div class="page-content">
+              
+             
+              <div class="list-block">
+                <ul>
+                      
+                 <li><a href="otra.html" class="item-link close-panel">
+                  <div class="item-content">
+
+                    <div class="item-inner">
+                      <div class="item-title">FAQ</div>
+                    </div>
+                  </div></a></li>
+
+                      <li><a href="acercade.html" class="item-link close-panel">
+                        <div class="item-content">
+
+                          <div class="item-inner">
+                            <div class="item-title">Acerca de</div>
+                          </div>
+                        </div></a></li>
+                       
+                  
+                 
+                </ul>
+              </div> <!-- fin .list-block-->
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+     
+    <!-- ================ VISTAS ================== >
+
+    <!-- Views -->
+    <div class="views">
+
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-fixed">
+          <!-- Page, "data-page" contains page name -->
+          <div data-page="index" class="page">
+ 
+            <!-- Top Navbar. In Material theme it should be inside of the page-->
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="center">MathRelation</div>
+                 <div class="right"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div>
+              </div>
+            </div>
+ 
+             
+            <!-- Scrollable page content -->
+            <div class="page-content">
+
+             <div class="content-block">
+               ¡Bienvenido a MathRelation!. Ingrese los detalles para el conjunto A.
+              
+               <div class="content-block-title">Nro. de Elementos (5 <= n <= 15)</div>
+               <div class="list-block">
+                <ul>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner"> 
+                        <div class="item-input">
+                          <input type="text" placeholder="5" readonly="readonly" id="picker-elementos"/>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="content-block-title">Tipo de relación R</div>
+               <div class="list-block">
+                <ul>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner"> 
+                        <div class="item-input">
+                          <input type="text" placeholder="Seleccione una relación" readonly="readonly" id="picker-relacion"/>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              
+              
+              <!--Boton-->
+              <p class="buttons-row">
+                <a href="#" id="btnRandom"  class="button button-fill color-amber" >Listo</a>
+              </p>
+              
+
+              <ul>
+              <li>Reflexiva: Sí</li>
+              <li>Irreflexiva: No</li>
+              <li>Simétrica: Sí</li>
+              <li>Asimetrica: Sí</li>
+              <li>Antisimetrica: Sí</li>
+              <li>Transitiva: Sí</li>
+
+              </ul>
+              </div> <!-- Fin .content-block-->
+
+              <div class="content-block" id="block_divisores">
+                <p id="text_Random" style="display:none;"></p>
+                <p id="text_Divisores" style="display:none;"></p>
+              </div> <!-- Fin .content-block-->
+            
+
+            <div id="ShowResultados">
+              <div class="content-block-title">Resultados</div>
+              <!-- .list-block-->
+              <div class="list-block accordion-list inset">
+                <ul>
+                  <li class="accordion-item"><a href="#" class="item-link item-content">
+                    <div class="item-inner"> 
+                      <div class="item-title">Relación</div>
+                    </div></a>
+                    <div class="accordion-item-content">
+                      <div class="content-block">
+                        <p id="idNotacion"></p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item"><a href="#" class="item-link item-content">
+                    <div class="item-inner"> 
+                      <div class="item-title">Antisimétricas</div>
+                    </div></a>
+                    <div class="accordion-item-content">
+                        <div class="content-block">
+                        <p id="idAntisimetricas"></p>
+                      </div>
+
+                    </div>
+                  </li>
+                  <li class="accordion-item"><a href="#" class="item-link item-content">
+                    <div class="item-inner"> 
+                      <div class="item-title">Diagrama de Hasse</div>
+                    </div></a>
+                    <div class="accordion-item-content">
+                      <div class="content-block">
+                       
+                       <canvas id="idHasse" width="300" height="300"></canvas>
+    
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div><!-- Fin .list-block-->
+
+            </div> <!-- Fin #ShowResultados-->
+
+
+             
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- ================ LIBRERIAS JS ================== >
+
+    <!-- Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"> </script>
+    
+    <!-- JSs-->
+    <script type="text/javascript" src="js/app-start.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+   
+
+  </body>
+</html> 
